@@ -47,7 +47,7 @@ public class HomeView extends javax.swing.JFrame {
     }
     
     public void setUserScore(float score) {
-        infoUserScore.setText("Score: " + score);
+        infoUserScore.setText("Score: " + (score-1));
     }
 
     /**
@@ -71,6 +71,7 @@ public class HomeView extends javax.swing.JFrame {
         btnLogout = new javax.swing.JButton();
         btnGetInfo = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
+        btnRank = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -178,6 +179,15 @@ public class HomeView extends javax.swing.JFrame {
             }
         });
 
+        btnRank.setBackground(new java.awt.Color(245, 255, 250));
+        btnRank.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        btnRank.setText("Rank");
+        btnRank.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRankActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
         Background.setLayout(BackgroundLayout);
         BackgroundLayout.setHorizontalGroup(
@@ -195,15 +205,23 @@ public class HomeView extends javax.swing.JFrame {
                     .addGroup(BackgroundLayout.createSequentialGroup()
                         .addGap(74, 74, 74)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(74, 74, 74)
+                .addGap(72, 72, 72)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMessage)
-                    .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(BackgroundLayout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnRank, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(BackgroundLayout.createSequentialGroup()
+                            .addComponent(btnMessage)
+                            .addGap(1, 1, 1)))
                     .addComponent(btnGetInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(62, Short.MAX_VALUE))
+                    .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
         BackgroundLayout.setVerticalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,21 +231,25 @@ public class HomeView extends javax.swing.JFrame {
                     .addComponent(infoUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(infoUserScore, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BackgroundLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(BackgroundLayout.createSequentialGroup()
+                        .addGap(52, 52, 52)
                         .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(46, 46, 46)
+                        .addGap(29, 29, 29)
                         .addComponent(btnMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47)
+                        .addGap(33, 33, 33)
                         .addComponent(btnGetInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
+                        .addGap(37, 37, 37)
                         .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(btnRank, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(70, 70, 70))
         );
 
@@ -313,6 +335,11 @@ public class HomeView extends javax.swing.JFrame {
             System.exit(0);
         } 
     }//GEN-LAST:event_btnExitActionPerformed
+
+    private void btnRankActionPerformed(java.awt.event.ActionEvent evt) {
+        ClientRun.socketHandler.getRanking();
+        System.out.println("Đã gọi phương thức getRanking()"); // Thêm dòng này để kiểm tra
+    }
    
     /**
      * @param args the command line arguments
@@ -326,6 +353,7 @@ public class HomeView extends javax.swing.JFrame {
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnMessage;
     private javax.swing.JButton btnPlay;
+    private javax.swing.JButton btnRank;
     private javax.swing.JButton btnRefresh;
     private javax.swing.JLabel infoUserScore;
     private javax.swing.JLabel infoUsername;

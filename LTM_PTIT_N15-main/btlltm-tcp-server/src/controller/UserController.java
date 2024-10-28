@@ -28,6 +28,8 @@ public class UserController {
     private final String GET_INFO_USER = "SELECT username, password, score, win, draw, lose, avgCompetitor, avgTime FROM users WHERE username=?";
     
     private final String UPDATE_USER = "UPDATE users SET score = ?, win = ?, draw = ?, lose = ?, avgCompetitor = ?, avgTime = ? WHERE username=?";
+    
+    private final String GET_RANKING = "SELECT userId, username, score FROM users ORDER BY score DESC";
     //  Instance
     private final Connection con;
     
@@ -139,5 +141,29 @@ public class UserController {
             e.printStackTrace();
         }   
         return null;
+    }
+
+    public String getRanking() {
+        System.out.println("Xử lý yêu cầu GET_RANKING");
+        StringBuilder result = new StringBuilder("success;");
+        try {
+            PreparedStatement p = con.prepareStatement(GET_RANKING);
+            ResultSet r = p.executeQuery();
+            
+            int userCount = 0;
+            while (r.next()) {
+                userCount++;
+                result.append(r.getInt("userId")).append(";")
+                      .append(r.getString("username")).append(";")
+                      .append(r.getFloat("score")).append(";");
+            }
+            
+            result.insert(8, userCount + ";");
+            System.out.println("Dữ liệu ranking: " + result.toString());
+            return result.toString();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return "failed;Không thể lấy dữ liệu bảng xếp hạng";
+        }
     }
 }

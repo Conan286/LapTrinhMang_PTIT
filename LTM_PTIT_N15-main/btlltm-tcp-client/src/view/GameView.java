@@ -80,11 +80,22 @@ public class GameView extends javax.swing.JFrame {
         infoPLayer.setText("Play game with: " + username);
     }
     
-    public void setQuestion1 (String a, String b, String answerA, String answerB, String answerC, String answerD) {
+    public void setQuestion1(String a, String b, String answerA, String answerB, String answerC, String answerD) {
         setA1(a);
         setB1(b);
-        lbQuestion1.setText("1." + a );
-       
+        lbQuestion1.setText("1." + a);
+        
+        // Hiển thị nội dung trong 5 giây
+        javax.swing.Timer timer = new javax.swing.Timer(5000, new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                // Ẩn nội dung bằng cách thay thế bằng dấu sao
+                String hiddenContent = "*".repeat(lbQuestion1.getText().length());
+                lbQuestion1.setText(hiddenContent);
+            }
+        });
+        timer.setRepeats(false);
+        timer.start();
     }
     
 
@@ -271,11 +282,11 @@ public class GameView extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lbQuestion1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addComponent(tfMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(tfMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lbQuestion1, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -327,7 +338,7 @@ public class GameView extends javax.swing.JFrame {
         panelPlayAgain.setBorder(javax.swing.BorderFactory.createTitledBorder("Question?"));
 
         lbWaitingTimer.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lbWaitingTimer.setForeground(new java.awt.Color(255, 204, 51));
+        lbWaitingTimer.setForeground(new java.awt.Color(0, 0, 0));
         lbWaitingTimer.setText("00:00");
 
         btnYes.setText("Yes");
@@ -345,7 +356,7 @@ public class GameView extends javax.swing.JFrame {
         });
 
         lbResult.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lbResult.setForeground(new java.awt.Color(255, 204, 51));
+        lbResult.setForeground(new java.awt.Color(0, 0, 0));
         lbResult.setText("Do you want to play again? ");
 
         javax.swing.GroupLayout panelPlayAgainLayout = new javax.swing.GroupLayout(panelPlayAgain);

@@ -13,6 +13,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import run.ClientRun;
+import view.Ranking;
+import javax.swing.SwingUtilities;
 
 public class SocketHandler {
 
@@ -128,6 +130,9 @@ public class SocketHandler {
                         break;
                     case "ASK_PLAY_AGAIN":
                         onReceiveAskPlayAgain(received);
+                        break;
+                    case "RANKING":
+                        onReceiveRanking(received);
                         break;
 
                     case "EXIT":
@@ -249,6 +254,12 @@ public class SocketHandler {
 
     public void notAcceptPlayAgain() {
         sendData("ASK_PLAY_AGAIN;NO;" + loginUser);
+    }
+
+    // Thêm phương thức mới
+    public void getRanking() {
+        System.out.println("Gửi yêu cầu GET_RANKING đến server");
+        sendData("GET_RANKING");
     }
 
     /**
@@ -575,6 +586,35 @@ public class SocketHandler {
             } else {
                 ClientRun.gameView.setStateUserInvited();
             }
+        }
+    }
+
+    // Thêm phương thức mới để xử lý dữ liệu bảng xếp hạng
+    private void onReceiveRanking(String received) {
+        System.out.println("Nhận dữ liệu ranking từ server: " + received);
+        String[] splitted = received.split(";");
+        String status = splitted[1];
+
+        if (status.equals("success")) {
+            int userCount = Integer.parseInt(splitted[2]);
+            Vector<Vector<Object>> data = new Vector<>();
+
+            for (int i = 3; i < splitted.length; i += 3) {
+                Vector<Object> row = new Vector<>();
+                row.add(Integer.parseInt(splitted[i]));     // ID
+                row.add(splitted[i + 1]);                   // Username
+                row.add(Float.parseFloat(splitted[i + 2])); // Score
+                data.add(row);
+            }
+
+            SwingUtilities.invokeLater(() -> {
+                System.out.println("Hiển thị giao diện Ranking");
+                Ranking rankingView = new Ranking();
+                rankingView.setRankingData(data);
+                rankingView.setVisible(true);
+            });
+        } else {
+            JOptionPane.showMessageDialog(null, "Không thể lấy dữ liệu bảng xếp hạng", "Lỗi", JOptionPane.ERROR_MESSAGE);
         }
     }
 

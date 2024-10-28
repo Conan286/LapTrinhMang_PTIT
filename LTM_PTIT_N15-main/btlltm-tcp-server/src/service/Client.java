@@ -114,6 +114,9 @@ public class Client implements Runnable {
                     case "ASK_PLAY_AGAIN":
                         onReceiveAskPlayAgain(received);
                         break;
+                    case "GET_RANKING":
+                        onReceiveGetRanking();
+                        break;
                         
                     case "EXIT":
                         running = false;
@@ -492,5 +495,11 @@ public class Client implements Runnable {
         this.joinedRoom = joinedRoom;
     }
     
+    private void onReceiveGetRanking() {
+        System.out.println("Nhận yêu cầu GET_RANKING từ client");
+        String rankingData = new UserController().getRanking();
+        sendData("RANKING;" + rankingData);
+        System.out.println("Đã gửi dữ liệu ranking về client");
+    }
     
 }

@@ -43,13 +43,8 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                  <Component id="jLabel2" min="-2" pref="252" max="-2" attributes="0"/>
-                  <EmptySpace pref="86" max="32767" attributes="0"/>
-              </Group>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="110" max="32767" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
               </Group>
@@ -60,9 +55,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="35" max="32767" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="35" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel2" min="-2" pref="206" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="230" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -77,14 +70,6 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Server is running..."/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Download\LTM_PTIT_N09-main\LTM_PTIT_N09-main\btlltm-tcp-server\src\picture\running cat.png"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="jLabel2"/>
           </Properties>
         </Component>
       </SubComponents>
