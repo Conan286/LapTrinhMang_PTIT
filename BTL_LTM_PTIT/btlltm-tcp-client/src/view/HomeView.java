@@ -47,7 +47,7 @@ public class HomeView extends javax.swing.JFrame {
     }
     
     public void setUserScore(float score) {
-        infoUserScore.setText("Score: " + (score-1));
+        infoUserScore.setText("Score: " + (score));
     }
 
     /**

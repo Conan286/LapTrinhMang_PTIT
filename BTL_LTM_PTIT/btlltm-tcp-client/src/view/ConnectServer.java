@@ -48,7 +48,7 @@ public class ConnectServer extends javax.swing.JFrame {
         txIP.setEditable(false);
         txIP.setBackground(new java.awt.Color(255, 255, 255));
         txIP.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        txIP.setText("127.0.0.1");
+        txIP.setText("10.21.31.68");
         txIP.setSelectionColor(new java.awt.Color(66, 107, 85));
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
