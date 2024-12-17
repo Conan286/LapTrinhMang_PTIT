@@ -3,8 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Legion/Documents/JavaNetWork/LapTrinhMang_PTIT/LuyenTapLTM/src/TCP/Customer.java</file>
-            <file>file:/C:/Users/Legion/Documents/JavaNetWork/LapTrinhMang_PTIT/LuyenTapLTM/src/TCP/TCP_ObjectStream.java</file>
+            <file>file:/C:/Users/Legion/Documents/JavaNetWork/LapTrinhMang_PTIT/LapTrinhMang_PTIT/LuyenTapLTM/src/RMIClient/RMI_Data2.java</file>
+            <file>file:/C:/Users/Legion/Documents/JavaNetWork/LapTrinhMang_PTIT/LapTrinhMang_PTIT/LuyenTapLTM/src/RMI/DataService.java</file>
+            <file>file:/C:/Users/Legion/Documents/JavaNetWork/LapTrinhMang_PTIT/LapTrinhMang_PTIT/LuyenTapLTM/src/RMIClient/RMI_Byte2.java</file>
+            <file>file:/C:/Users/Legion/Documents/JavaNetWork/LapTrinhMang_PTIT/LapTrinhMang_PTIT/LuyenTapLTM/src/RMIClient/RMI_Byte.java</file>
+            <file>file:/C:/Users/Legion/Documents/JavaNetWork/LapTrinhMang_PTIT/LapTrinhMang_PTIT/LuyenTapLTM/src/RMIClient/RMI_Data.java</file>
+            <file>file:/C:/Users/Legion/Documents/JavaNetWork/LapTrinhMang_PTIT/LapTrinhMang_PTIT/LuyenTapLTM/src/UDP/UDP_String2.java</file>
+            <file>file:/C:/Users/Legion/Documents/JavaNetWork/LapTrinhMang_PTIT/LapTrinhMang_PTIT/LuyenTapLTM/src/RMI/ByteService.java</file>
+            <file>file:/C:/Users/Legion/Documents/JavaNetWork/LapTrinhMang_PTIT/LapTrinhMang_PTIT/LuyenTapLTM/src/UDP/UDPDataType2.java</file>
+            <file>file:/C:/Users/Legion/Documents/JavaNetWork/LapTrinhMang_PTIT/LapTrinhMang_PTIT/LuyenTapLTM/src/UDP/UDPString2.java</file>
+            <file>file:/C:/Users/Legion/Documents/JavaNetWork/LapTrinhMang_PTIT/LapTrinhMang_PTIT/LuyenTapLTM/src/UDP/UDP_DataType2.java</file>
+            <file>file:/C:/Users/Legion/Documents/JavaNetWork/LapTrinhMang_PTIT/LapTrinhMang_PTIT/LuyenTapLTM/src/RMI/CharacterService.java</file>
+            <file>file:/C:/Users/Legion/Documents/JavaNetWork/LapTrinhMang_PTIT/LapTrinhMang_PTIT/LuyenTapLTM/src/RMIClient/RMI_Character2.java</file>
         </group>
     </open-files>
 </project-private>
